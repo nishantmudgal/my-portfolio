@@ -14,4 +14,3 @@ export const siteConfig = {
     email: 'your.email@example.com',
   },
 }
-

@@ -4,19 +4,17 @@ import { useEffect, useState } from 'react'
 
 type Theme = 'light' | 'dark'
 
-export function useTheme() {
-  const [theme, setTheme] = useState<Theme>('light')
-  const [mounted, setMounted] = useState(false)
+function getInitialTheme(): Theme {
+  if (typeof window === 'undefined') return 'light'
+  const storedTheme = localStorage.getItem('theme') as Theme | null
+  if (storedTheme) return storedTheme
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'
+  return 'light'
+}
 
-  useEffect(() => {
-    setMounted(true)
-    const storedTheme = localStorage.getItem('theme') as Theme | null
-    if (storedTheme) {
-      setTheme(storedTheme)
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark')
-    }
-  }, [])
+export function useTheme() {
+  const [theme, setTheme] = useState<Theme>(getInitialTheme)
+  const mounted = typeof window !== 'undefined'
 
   useEffect(() => {
     if (mounted) {
@@ -31,4 +29,3 @@ export function useTheme() {
 
   return { theme, toggleTheme, mounted }
 }
-
