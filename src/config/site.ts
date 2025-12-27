@@ -1,7 +1,9 @@
 export const siteConfig = {
-  name: 'My Portfolio',
-  description: 'A modern portfolio website showcasing my projects and skills',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+  name: 'Nishant Mudgal',
+  title: 'Software Developer Portfolio',
+  description:
+    'Frontend-focused software developer building scalable, high-performance web applications.',
+  url: 'https://your-domain.vercel.app',
   ogImage: '/og-image.jpg',
   links: {
     twitter: 'https://twitter.com',
