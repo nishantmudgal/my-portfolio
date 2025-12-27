@@ -1,27 +1,26 @@
-import { HTMLAttributes, ReactNode } from 'react'
+import { cn } from '../../utils/cn'
 
-interface TextProps extends HTMLAttributes<HTMLElement> {
-  children: ReactNode
-  as?: 'p' | 'span' | 'div' | 'label'
-  variant?: 'body' | 'caption' | 'small'
+type TextProps = {
+  as?: 'p' | 'span' | 'div'
+  variant?: 'body' | 'muted'
   className?: string
+  children: React.ReactNode
 }
 
-export default function Text({
-  children,
+export function Text({
   as: Component = 'p',
   variant = 'body',
-  className = '',
-  ...props
+  className,
+  children,
 }: TextProps) {
-  const variants = {
-    body: 'text-base',
-    caption: 'text-sm text-gray-600',
-    small: 'text-xs text-gray-500',
-  }
-
   return (
-    <Component className={`${variants[variant]} ${className}`} {...props}>
+    <Component
+      className={cn(
+        variant === 'body' && 'text-foreground text-base',
+        variant === 'muted' && 'text-muted-foreground text-sm',
+        className,
+      )}
+    >
       {children}
     </Component>
   )

@@ -1,9 +1,8 @@
 // Components
-// export { Button } from './components/Button'
-export { Container } from './components/Container'
-export { Text } from './components/Text'
+export * from './components/Button'
+export * from './components/Container'
+export * from './components/Text'
+export * from './components/Heading'
 
 // Utils
 export { cn } from './utils/cn'
-
-export * from './components/Button'
