@@ -1,0 +1,7 @@
+@import '../tokens/colors.css';
+@import '../tokens/radius.css';
+@import '../tokens/typography.css';
+
+* {
+  box-sizing: border-box;
+}
