@@ -40,8 +40,6 @@
 //   )
 // }
 
-
-
 import { cn } from '../../utils/cn'
 
 type ButtonProps = {
@@ -53,17 +51,15 @@ type ButtonProps = {
 export function Button({
   children,
   variant = 'primary',
-  className
+  className,
 }: ButtonProps) {
   return (
     <button
       className={cn(
         'rounded-md px-4 py-2 text-sm font-medium',
-        variant === 'primary' &&
-          'bg-[hsl(var(--ds-primary))] text-white',
-        variant === 'secondary' &&
-          'bg-[hsl(var(--ds-secondary))] text-black',
-        className
+        variant === 'primary' && 'bg-[hsl(var(--ds-primary))] text-white',
+        variant === 'secondary' && 'bg-[hsl(var(--ds-secondary))] text-black',
+        className,
       )}
     >
       {children}
