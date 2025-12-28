@@ -1,4 +1,5 @@
-import { Button, Container, Heading, Text } from '@/design-system'
+import Link from 'next/link'
+import { Button, Heading, Text, Container } from '@/design-system'
 
 export default function Hero() {
   return (
@@ -12,8 +13,9 @@ export default function Hero() {
         </Text>
 
         <div className="mt-6 flex justify-center gap-4">
-          <Button>View Projects</Button>
-          <Button variant="secondary">Contact Me</Button>
+          <Link href="/projects">
+            <Button>View Projects</Button>
+          </Link>
         </div>
       </Container>
     </section>
