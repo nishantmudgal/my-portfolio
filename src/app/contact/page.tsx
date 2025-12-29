@@ -1,6 +1,8 @@
 import { submitContact } from '@/app/actions/contact'
 import { Button, Container, Heading, Text } from '@/design-system'
 
+export const dynamic = 'force-dynamic'
+
 export default function ContactPage() {
   return (
     <Container className="max-w-xl py-24">
