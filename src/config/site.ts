@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Nishant Mudgal',
-  title: 'Software Developer Portfolio',
+  title: 'Nishant Mudgal | Software Developer',
   description:
     'Frontend-focused software developer building scalable, high-performance web applications.',
   url: 'https://my-portfolio-drab-six-49.vercel.app/',

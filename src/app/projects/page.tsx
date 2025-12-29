@@ -2,6 +2,13 @@ import { Container, Heading } from '@/design-system'
 import { projects } from '@/data/projects'
 import { ProjectCard } from '@/design-system'
 import { FadeIn } from '@/components/animations/FadeIn'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Projects',
+  description:
+    'Selected projects showcasing scalable frontend architecture and design systems.',
+}
 
 export default function ProjectsPage() {
   return (
