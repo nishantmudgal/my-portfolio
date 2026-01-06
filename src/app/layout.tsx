@@ -3,6 +3,7 @@ import { siteConfig } from '@/config/site'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import { Analytics } from '@vercel/analytics/react'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: {
