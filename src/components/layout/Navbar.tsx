@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 export default function Navbar() {
   return (
@@ -29,6 +30,15 @@ export default function Navbar() {
             >
               Contact
             </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary text-sm font-medium transition-colors"
+            >
+              Resume
+            </a>
+            <ThemeToggle />
           </nav>
         </div>
       </div>

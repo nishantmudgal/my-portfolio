@@ -1,18 +1,17 @@
 export const siteConfig = {
   name: 'Nishant Mudgal',
-  title: 'Nishant Mudgal | Software Developer',
+  title: 'Nishant Mudgal | Frontend Software Engineer',
   description:
-    'Frontend-focused software developer building scalable, high-performance web applications.',
-  url: 'https://my-portfolio-drab-six-49.vercel.app/',
+    'Software Engineer (Frontend) with 3+ years of experience building scalable, performant, and accessible products using React, Next.js, TypeScript, and GraphQL.',
+  url: 'https://nishantmudgal.com', // Placeholder URL
   ogImage: '/og-image.jpg',
   links: {
-    // twitter: 'https://twitter.com',
-    github: 'https://github.com/nishantmudgal',
-    linkedin: 'https://linkedin.com',
-    email: 'mailto:3nishantmudgal@example.com',
+    github: 'https://github.com/nishant-mudgal', // Guessed from resume text "nishant-mudgal"
+    linkedin: 'https://linkedin.com/in/nishant-mudgal', // Guessed pattern
+    email: 'mailto:3nishantmudgal@gmail.com',
   },
   author: {
     name: 'Nishant Mudgal',
-    email: '3nishantmudgal@example.com',
+    email: '3nishantmudgal@gmail.com',
   },
 }
