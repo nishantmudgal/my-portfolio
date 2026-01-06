@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
-import Navbar from '@/components/layout/Navbar'
+import { Sidebar } from '@/components/layout/Sidebar'
+import { MobileNav } from '@/components/layout/MobileNav'
 import Footer from '@/components/layout/Footer'
 import { Analytics } from '@vercel/analytics/react'
 import { ThemeProvider } from './providers'
@@ -58,9 +59,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          {children}
-          <Footer />
+          <div className="flex min-h-screen">
+            <Sidebar variant="minimal" />
+            <main className="flex-1">
+              <MobileNav />
+              {children}
+              <Footer />
+            </main>
+          </div>
           <Analytics />
         </ThemeProvider>
       </body>

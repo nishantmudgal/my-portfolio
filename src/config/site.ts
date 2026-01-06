@@ -1,17 +1,14 @@
+import { personalData } from '@/data/personal'
+
 export const siteConfig = {
-  name: 'Nishant Mudgal',
-  title: 'Nishant Mudgal | Frontend Software Engineer',
-  description:
-    'Software Engineer (Frontend) with 3+ years of experience building scalable, performant, and accessible products using React, Next.js, TypeScript, and GraphQL.',
+  name: personalData.name,
+  title: `${personalData.name} | ${personalData.about.title}`,
+  description: personalData.about.longDescription,
   url: 'https://nishantmudgal.com', // Placeholder URL
   ogImage: '/og-image.jpg',
-  links: {
-    github: 'https://github.com/nishant-mudgal', // Guessed from resume text "nishant-mudgal"
-    linkedin: 'https://linkedin.com/in/nishant-mudgal', // Guessed pattern
-    email: 'mailto:3nishantmudgal@gmail.com',
-  },
+  links: personalData.socialParams,
   author: {
-    name: 'Nishant Mudgal',
-    email: '3nishantmudgal@gmail.com',
+    name: personalData.name,
+    email: personalData.contact.email,
   },
 }

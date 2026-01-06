@@ -1,61 +1,59 @@
-import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn'
-import { Container, Heading, Text } from '@/design-system'
-
-const skills = [
-  'JavaScript (ES6+)',
-  'TypeScript',
-  'React',
-  'Next.js',
-  'Tailwind CSS',
-  'Node.js',
-  'Git',
-  'Figma',
-]
+import { Container, Heading } from '@/design-system'
+import { personalData } from '@/data/personal'
 
 export default function About() {
   return (
-    <section id="about" className="bg-secondary/30 py-20">
+    <section id="about" className="bg-background py-24">
       <Container>
-        <Heading as="h2" className="mb-10 text-center">
-          About Me
-        </Heading>
+        {/* Section Title */}
+        <div className="mb-12">
+          <Heading
+            as="h2"
+            className="after:bg-primary relative mb-4 text-3xl font-bold tracking-wider uppercase after:absolute after:mt-2 after:block after:h-[3px] after:w-16 after:content-['']"
+          >
+            About
+          </Heading>
+          <p className="text-muted-foreground mt-4 max-w-3xl">
+            {personalData.about.description}
+          </p>
+        </div>
 
-        <div className="grid items-center gap-12 md:grid-cols-2">
-          <FadeIn>
-            <div className="space-y-4">
-              <Heading as="h3" className="text-2xl">
-                Who I Am
-              </Heading>
-              <Text>
-                I am a dedicated software developer with a passion for building
-                digital products that look great and perform even better. I
-                enjoy turning complex problems into simple, beautiful, and
-                intuitive designs.
-              </Text>
-              <Text>
-                When I&apos;m not coding, you&apos;ll find me reading about new
-                technologies, tweaking my setup, or exploring the outdoors.
-              </Text>
-            </div>
-          </FadeIn>
+        <div className="grid gap-12 lg:grid-cols-3">
+          <div className="lg:col-span-1">
+            <img
+              src="/assets/img/profile-img.jpg"
+              alt="Profile"
+              className="w-full rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="lg:col-span-2">
+            <h3 className="text-primary mb-4 text-2xl font-bold">
+              {personalData.about.title}
+            </h3>
+            <p className="text-muted-foreground mb-6 italic">
+              {personalData.about.description}
+            </p>
 
-          <div>
-            <FadeIn delay={0.2}>
-              <Heading as="h3" className="mb-6 text-2xl">
-                Skills
-              </Heading>
-            </FadeIn>
-            <FadeInStagger>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <FadeIn key={skill}>
-                    <span className="bg-background hover:border-primary cursor-default rounded-full border px-3 py-1 text-sm font-medium transition-colors">
-                      {skill}
-                    </span>
-                  </FadeIn>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="space-y-4">
+                {personalData.about.details.slice(0, 4).map((detail) => (
+                  <div key={detail.label} className="flex items-center gap-2">
+                    <span className="text-primary font-bold">{'>'}</span>
+                    <strong>{detail.label}:</strong> <span>{detail.value}</span>
+                  </div>
                 ))}
               </div>
-            </FadeInStagger>
+              <div className="space-y-4">
+                {personalData.about.details.slice(4).map((detail) => (
+                  <div key={detail.label} className="flex items-center gap-2">
+                    <span className="text-primary font-bold">{'>'}</span>
+                    <strong>{detail.label}:</strong> <span>{detail.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <p className="mt-6">{personalData.about.longDescription}</p>
           </div>
         </div>
       </Container>

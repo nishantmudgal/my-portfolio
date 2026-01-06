@@ -1,56 +1,64 @@
+'use client'
+
+import { useState } from 'react'
 import { Container, Heading, ProjectCard } from '@/design-system'
 import { FadeIn, FadeInStagger } from '@/components/animations/FadeIn'
-
-const projects = [
-  {
-    title: 'McKinsey.com Navigation Redesign',
-    description:
-      'Complete frontend architecture overhaul improving navigation performance by ~32% and achieving WCAG AA accessibility compliance.',
-    techStack: ['React', 'Next.js', 'TypeScript', 'Accessibility'],
-    githubUrl: undefined,
-    liveUrl: '#',
-  },
-  {
-    title: 'Global JAMstack Platform',
-    description:
-      'High-traffic platform for 5M+ monthly users. Improved page load time by ~28% through optimized bundling and caching strategies.',
-    techStack: ['Next.js', 'JAMstack', 'Performance', 'Caching'],
-    githubUrl: undefined,
-    liveUrl: '#',
-  },
-  {
-    title: 'Biometric Access Firmware',
-    description:
-      'Production firmware for biometric access control terminals. Optimized hardware-software integration for stability.',
-    techStack: ['C++', 'Linux', 'Embedded Systems'],
-    githubUrl: undefined,
-    liveUrl: undefined,
-  },
-]
+import { cn } from '@/design-system/utils/cn'
+import { projects, portfolioFilters } from '@/data/projects'
 
 export default function Projects() {
-  return (
-    <section id="projects" className="py-24">
-      <Container>
-        <FadeIn>
-          <div className="mb-16 text-center">
-            <Heading as="h2">Featured Projects</Heading>
-            <p className="text-muted-foreground mx-auto mt-4 max-w-2xl">
-              A selection of projects that showcase my skills in frontend
-              development and user interface design.
-            </p>
-          </div>
-        </FadeIn>
+  const [activeFilter, setActiveFilter] = useState('All')
 
-        <FadeInStagger>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
-              <FadeIn key={project.title}>
-                <ProjectCard {...project} />
-              </FadeIn>
+  const filteredProjects = projects.filter((project) =>
+    activeFilter === 'All' ? true : project.category === activeFilter,
+  )
+
+  return (
+    <section id="projects" className="bg-secondary/10 py-24">
+      <Container>
+        <div className="mb-12">
+          <Heading
+            as="h2"
+            className="after:bg-primary relative mb-4 text-3xl font-bold tracking-wider uppercase after:absolute after:mt-2 after:block after:h-[3px] after:w-16 after:content-['']"
+          >
+            Portfolio
+          </Heading>
+          <p className="text-muted-foreground mt-4 max-w-3xl">
+            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
+            aliquid fuga eum quidem.
+          </p>
+        </div>
+
+        {/* Filters */}
+        <div className="mb-12 flex justify-center">
+          <ul className="bg-background/50 flex flex-wrap justify-center gap-4 rounded-full px-6 py-2 shadow-sm">
+            {portfolioFilters.map((filter) => (
+              <li
+                key={filter}
+                className={cn(
+                  'hover:text-primary cursor-pointer text-sm font-semibold uppercase transition-colors',
+                  activeFilter === filter
+                    ? 'text-primary'
+                    : 'text-muted-foreground',
+                )}
+                onClick={() => setActiveFilter(filter)}
+              >
+                {filter}
+              </li>
             ))}
-          </div>
-        </FadeInStagger>
+          </ul>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {filteredProjects.map((project) => (
+            <div
+              key={project.title}
+              className="animate-in fade-in zoom-in duration-500"
+            >
+              <ProjectCard {...project} />
+            </div>
+          ))}
+        </div>
       </Container>
     </section>
   )
