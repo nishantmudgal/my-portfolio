@@ -1,35 +1,33 @@
 export const personalData = {
   name: 'Nishant Mudgal',
-  roles: [
-    'Developer',
-    'Frontend Engineer',
-    'Freelancer',
-    'Open Source Contributor',
-  ],
+  roles: ['Developer', 'Frontend Engineer', 'AI Developer', 'Traveller'],
   about: {
-    title: 'UI/UX Designer & Web Developer.',
+    title: 'Software Engineer & Frontend Specialist',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      'Software Engineer with 5+ years of experience building scalable web applications and high-performance frontend architectures. Currently at McKinsey & Company, previously at IDEMIA.',
     details: [
-      { label: 'Birthday', value: '1 May 1995' },
-      { label: 'Website', value: 'www.example.com' },
-      { label: 'Phone', value: '+123 456 7890' },
-      { label: 'City', value: 'New York, USA' },
-      { label: 'Age', value: '30' },
+      { label: 'Birthday', value: '3 November 1996' },
+      {
+        label: 'Website',
+        value: 'https://my-portfolio-drab-six-49.vercel.app/',
+      },
+      { label: 'Phone', value: '+91 8968774126' },
+      { label: 'City', value: 'New Delhi, India' },
+      { label: 'Age', value: '29' },
       { label: 'Degree', value: 'Master' },
       { label: 'Email', value: '3nishantmudgal@gmail.com' },
     ],
     longDescription:
-      'Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.',
+      'Passionate about creating elegant, user-centered digital experiences. At McKinsey, I led the frontend architecture for a navigation redesign that improved performance by 32% and achieved WCAG AA compliance. I also built a global-scale JAMstack platform serving 5M+ monthly users. My background includes firmware development for biometric systems at IDEMIA, giving me a unique full-stack perspective from embedded systems to modern web technologies.',
   },
   contact: {
     address: 'New Delhi, India',
-    phone: '+91 (123) 456-7890',
+    phone: '+91 8968774126',
     email: '3nishantmudgal@gmail.com',
   },
   socialParams: {
-    github: 'https://github.com/nishant-mudgal',
-    linkedin: 'https://linkedin.com/in/nishant-mudgal',
+    github: 'https://github.com/nishantmudgal',
+    linkedin: 'https://linkedin.com/in/nishantmudgal',
     twitter: 'https://twitter.com/nishantmudgal',
     email: 'mailto:3nishantmudgal@gmail.com',
   },

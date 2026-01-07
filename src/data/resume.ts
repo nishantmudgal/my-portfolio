@@ -42,6 +42,6 @@ export const summary = {
   description:
     'Innovative and deadline-driven Software Engineer with 3+ years of experience designing and developing user-centered digital products.',
   address: 'New Delhi, India',
-  phone: '(123) 456-7891',
+  phone: '+91 8968774126',
   email: '3nishantmudgal@gmail.com',
 }

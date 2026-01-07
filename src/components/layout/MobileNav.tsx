@@ -31,7 +31,10 @@ export function MobileNav() {
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <Sidebar className="relative flex h-full w-full border-none text-left shadow-none" />
+        <Sidebar
+          className="relative flex h-full w-full border-none text-left shadow-none"
+          onItemClick={() => setIsOpen(false)}
+        />
       </div>
     </>
   )

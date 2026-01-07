@@ -13,10 +13,6 @@ export default function Resume() {
           >
             Resume
           </Heading>
-          <p className="text-muted-foreground mt-4 max-w-3xl">
-            Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-            aliquid fuga eum quidem.
-          </p>
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2">

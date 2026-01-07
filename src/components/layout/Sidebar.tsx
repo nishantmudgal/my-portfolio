@@ -29,9 +29,11 @@ const navItems = [
 export function Sidebar({
   className,
   variant = 'default',
+  onItemClick,
 }: {
   className?: string
   variant?: 'default' | 'minimal'
+  onItemClick?: () => void
 }) {
   const [activeSection, setActiveSection] = useState('')
 
@@ -76,6 +78,7 @@ export function Sidebar({
               <a
                 key={item.name}
                 href={item.href}
+                onClick={onItemClick}
                 className={cn(
                   'group hover:bg-primary flex h-[56px] w-[56px] items-center overflow-hidden rounded-full p-0 shadow-sm transition-all duration-300 hover:w-full hover:text-white dark:bg-gray-800/50',
                   isActive

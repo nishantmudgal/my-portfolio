@@ -13,13 +13,12 @@ export default function Skills() {
             Skills
           </Heading>
           <p className="text-muted-foreground mt-4 max-w-3xl">
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
+            {skills.description}
           </p>
         </div>
 
         <div className="grid gap-x-12 gap-y-6 md:grid-cols-2">
-          {skills.map((skill) => (
+          {skills.list.map((skill) => (
             <div key={skill.name}>
               <div className="flex justify-between py-1">
                 <span className="text-foreground text-sm font-bold uppercase">

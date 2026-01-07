@@ -19,14 +19,14 @@ export default function ProjectsPage() {
 
       <div className="grid gap-6 md:grid-cols-2">
         {projects.map((project, index) => (
-          <FadeIn key={project.id} delay={index * 0.05}>
+          <FadeIn key={project.title} delay={index * 0.05}>
             <ProjectCard
-              key={project.id}
               title={project.title}
               description={project.description}
               techStack={project.techStack}
               githubUrl={project.githubUrl}
               liveUrl={project.liveUrl}
+              image={project.image}
             />
           </FadeIn>
         ))}
