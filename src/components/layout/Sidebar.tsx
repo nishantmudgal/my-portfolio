@@ -116,7 +116,7 @@ export function Sidebar({
   return (
     <aside
       className={cn(
-        'bg-background fixed top-0 left-0 z-40 hidden h-screen w-[300px] overflow-y-auto border-r px-6 py-8 shadow-lg md:flex md:flex-col',
+        'bg-background fixed top-0 left-0 z-40 flex hidden h-screen w-[300px] flex-col overflow-y-auto border-r px-6 py-8 shadow-lg',
         className,
       )}
     >
